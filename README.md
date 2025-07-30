@@ -1,1 +1,1 @@
-# Django_Trainee_Questions_AccuKnox
+# Django_AccuKnox_Assignment
