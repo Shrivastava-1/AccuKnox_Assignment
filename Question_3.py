@@ -1,5 +1,5 @@
-# Question_3: Do Django signals run in the same database transaction as the caller?
-# Answer: Yes, by default, Django signals run in the same database transaction as the caller if the signal is connected normally with async or thread-based triggers.
+# Ques: By default do Django signals run in the same database transaction as the caller?
+# Ans: Yes, by default Django signals run in the same database transaction as the caller — but there are important nuances depending on when the signal is triggered and how you're using transactions.
 
 from django.db import transaction
 from django.db.models.signals import post_save
