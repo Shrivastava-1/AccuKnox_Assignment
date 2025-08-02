@@ -9,7 +9,6 @@ import threading
 
 @receiver(post_save, sender=User)
 def user_created_signal(sender, instance, created, **kwargs):
-    print("Signal started")
     print(f"Thread name: {threading.current_thread().name}")
     if created:
         print(f"New user created: {instance.username}")
