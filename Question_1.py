@@ -9,8 +9,8 @@ from django.contrib.auth.models import User
 @receiver(post_save, sender=User)
 def user_created_handler(sender, instance, created, **kwargs):
     if created:
-        print(f"Signal received for user: {instance.username}")
-        print("Processing... Please wait 5 seconds.")
+        print(f"Signal received: {instance.username}")
+        print("Processing")
         time.sleep(5)
         print("Signal processed.")
 
