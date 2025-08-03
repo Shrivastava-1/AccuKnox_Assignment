@@ -9,8 +9,8 @@ from django.contrib.auth.models import User
 @receiver(post_save, sender=User)
 def user_created_signal(sender, instance, created, **kwargs):
     if created:
-        print(f"Signal Triggered for: {instance.username}")
-        print(f"Users : {User.objects.count()}")
+        print(f"Signal Triggered: {instance.username}")
+        print(f"Users: {User.objects.count()}")
 
 def test_signal_with_transaction():
     try:
@@ -24,5 +24,4 @@ def test_signal_with_transaction():
     final_count = User.objects.filter(username="signaltest").count()
     print(f"Final user count in DB after rollback: {final_count}")
 
-# Run the test function
 test_signal_with_transaction()
